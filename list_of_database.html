@@ -1,0 +1,50 @@
+<?php
+// Database connection details
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+// Connect to the MySQL server
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Query to get the list of databases
+$sql = "SHOW DATABASES";
+$result = $conn->query($sql);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database List</title>
+    <link rel="stylesheet" href="list_of_database.css">
+
+</head>
+<body>
+    <h3>List of Databases</h3>
+    <ul>
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $databaseName = $row['Database'];
+                echo '<li>';
+                echo $databaseName;
+                echo '<div class="buttons">';
+                echo '<a href="use_database.php?database_name=' . urlencode($databaseName) . '" class="btn btn-use">USE</a>';
+                echo '<a href="drop_database.php?database_name=' . urlencode($databaseName) . '" class="btn btn-drop">DROP</a>';
+                echo '</div>';
+                echo '</li>';
+            }
+        } else {
+            echo "<p>No databases found.</p>";
+        }
+        $conn->close();
+        ?>
+    </ul>
+</body>
+</html>

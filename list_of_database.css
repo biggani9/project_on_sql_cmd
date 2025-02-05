@@ -1,0 +1,95 @@
+
+        body {
+            background-color:rgb(192, 228, 236);
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h3 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            h3 {
+                color: #333;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            li {
+                margin: 10px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+            .buttons {
+                display: flex;
+                gap: 10px;
+            }
+            .btn {
+                padding: 8px 15px;
+                font-size: 14px;
+                color: white;
+                text-decoration: none;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .btn-use {
+                background-color: #4CAF50;
+                text-decoration: none;
+            }
+            .btn-use:hover {
+                background-color: #45a049;
+            }
+            .btn-drop {
+                background-color: #f44336;
+                text-decoration: none;
+            }
+            .btn-drop:hover {
+                background-color: #e53935;
+            }
+        }
+        li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            padding: 8px 15px;
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-edit {
+            background-color: #4CAF50;
+        }
+        .btn-edit:hover {
+            background-color: #45a049;
+        }
+        .btn-delete {
+            background-color: #f44336;
+        }
+        .btn-delete:hover {
+            background-color: #e53935;
+        }

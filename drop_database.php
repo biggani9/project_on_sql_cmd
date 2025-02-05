@@ -1,0 +1,44 @@
+<?php
+// Database connection details
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+// Connect to the MySQL server
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if the database_name parameter is provided
+if (isset($_GET['database_name'])) {
+    $databaseName = $_GET['database_name'];
+
+    // Drop the database
+    $sql = "DROP DATABASE `" . $databaseName . "`";
+    if ($conn->query($sql) === TRUE) {
+        // Database dropped successfully
+        echo "<script>
+                alert('Database \"$databaseName\" has been successfully dropped.');
+                window.location.href = 'list_of_database.php';
+              </script>";
+    } else {
+        // Error dropping the database
+        echo "<script>
+                alert('Error dropping database \"$databaseName\": " . $conn->error . "');
+                window.location.href = 'list_of_database.php';
+              </script>";
+    }
+} else {
+    // No database name provided
+    echo "<script>
+            alert('No database specified.');
+            window.location.href = 'list_of_database.php';
+          </script>";
+}
+
+// Close the connection
+$conn->close();
+?>

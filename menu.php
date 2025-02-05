@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <h1>Well come to database managemen system.</h1>
+      <a href="create_database.php" class="kije">
+        <button>Create Database</button>
+      </a>
+      <a href="list_of_database.php" class="kije">
+        <button>list of Database</button>
+      </a>
+
+</body>
+</html>
